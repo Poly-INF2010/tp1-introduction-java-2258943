@@ -1,6 +1,8 @@
 package Point;
 
+
 import java.util.Vector;
+
 
 public class Point2d extends AbstractPoint {
     private final Integer X = 0;
@@ -97,6 +99,8 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d multiply(Double multiplier) {
+       // Point2d addedPoint = new Point2D(multiplier * this.X, multiplier * this.Y);
+        //return addedPoint;
         return null;
     }
 
@@ -107,7 +111,9 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d add(Double adder) {
+
         return new Point2d(this.X() + adder, this.Y() + adder);
+
     }
     /** TODO
      * @return Deep copy of the 2D point
