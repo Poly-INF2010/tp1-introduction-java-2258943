@@ -1,5 +1,7 @@
 package Point;
 
+import java.util.Vector;
+
 public class Point2d extends AbstractPoint {
     private final Integer X = 0;
     private final Integer Y = 1;
@@ -38,7 +40,9 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d translate(Double[] translateVector) {
-        return null;
+        Double[] copyValue = vector;
+        PointOperator.translate(copyValue,translateVector);
+        return new Point2d(copyValue);
     }
 
     /** TODO
@@ -47,7 +51,9 @@ public class Point2d extends AbstractPoint {
      * @return Translated point
      */
     public Point2d translate(Point2d translateVector) {
-        return null;
+        Double[] copyValue = vector;
+        PointOperator.translate(copyValue, translateVector.vector);
+        return new Point2d(copyValue);
     }
 
     /** TODO
@@ -57,7 +63,9 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d rotate(Double[][] rotationMatrix) {
-        return null;
+        Double[] copyValue = vector;
+        PointOperator.rotate(copyValue, rotationMatrix);
+        return new Point2d(copyValue);
     }
 
     /** TODO
@@ -66,7 +74,10 @@ public class Point2d extends AbstractPoint {
      * @return Rotated point
      */
     public Point2d rotate(Double angle) {
-        return null;
+        Double x1 = Math.cos(angle);
+        Double x2 = Math.cos(angle);
+        Double[] copyValue = vector;
+        return new Point2d(copyValue);
     }
 
     /** TODO
@@ -96,9 +107,8 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d add(Double adder) {
-        return null;
+        return new Point2d(this.X() + adder, this.Y() + adder);
     }
-
     /** TODO
      * @return Deep copy of the 2D point
      */
