@@ -116,7 +116,7 @@ public class Point2d extends AbstractPoint {
     }
 
 
-    }
+
     /** TODO
      * @return Deep copy of the 2D point
      */
