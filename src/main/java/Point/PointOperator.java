@@ -24,7 +24,13 @@ public final class PointOperator {
      * @param rotationMatrix Matrix by which to rotate
      */
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
-
+        for(int i = 0; i < rotationMatrix.length; i++){
+            Double newValue = 0.0;
+            for(int j = 0; j < rotationMatrix[0].length; j++){
+                newValue += rotationMatrix[i][j] * vector[j];
+            }
+            vector[i] = newValue;
+        }
     }
 
     /** TODO
