@@ -177,8 +177,7 @@ public class BaseShape extends Transform implements Cloneable {
         if(!this.coords.isEmpty()){
             Double value = this.coords.stream().min(Comparator.comparingDouble(Point2d::X)).get().X();
             return value;
-        } else
-        {
+        } else {
             return Double.MAX_VALUE;
         }
     }
