@@ -112,7 +112,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Shallow copy of all coordinates contained by this BaseShape
      */
     public Collection<Point2d> getCoords() {
-        Collection<Point2d> coordsCopy = new ArrayList<>(Collections.emptyList());
+       Collection<Point2d> coordsCopy = new ArrayList<>(Collections.emptyList());
         for(Point2d coord: this.coords) {
             coordsCopy.add(coord);
         }

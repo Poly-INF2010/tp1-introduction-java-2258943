@@ -32,6 +32,8 @@ public class ShapeTest {
     @Test
     void rectangleDimCtor() {
         BaseShape rect = new Rectangle(new Point2d(5.0, 5.0));
+        int actualSize = rect.getCoords().size(); //troubleshoot
+        System.out.println("Actual size of coordinates: " + actualSize); //troubleshoot
         assertTrue(rect.getCoords().size() >= 25);
     }
 
