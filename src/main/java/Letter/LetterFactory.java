@@ -17,12 +17,52 @@ public final class LetterFactory {
      * @return BaseShape containing the letter A
      */
     public static BaseShape create_A()  {
-        Square square = new Square(5.0);
-        Rectangle rectangle = new Rectangle(5.0, 5.0);
-        rectangle.remove(square);
+
+      /*  double rectWidth = 5.0;
+        double rectHeight = halfMaxHeight;
+        double rotationAngleMilieu = Math.toRadians(-90);
+        double rotationAngle = Math.toRadians(20);
+        double translationMilieuX = rectWidth*4;
+        double translationDroiteX = rectWidth*8;
+
+        Rectangle rectangleGauche = new Rectangle(rectWidth, rectHeight);
+        Rectangle rectangleMilieu = new Rectangle(rectWidth, rectHeight/4);
+        Rectangle rectangleDroite = new Rectangle(rectWidth, rectHeight);
+
+        rectangleMilieu.replaceAll(rectangleMilieu.rotate(rectangleMilieu.getCoords(), rotationAngleMilieu));
+        rectangleMilieu.replaceAll(rectangleMilieu.translate(rectangleMilieu.getCoords(), new Point2d(translationMilieuX, 0.0)));
+        rectangleDroite.replaceAll(rectangleDroite.translate(rectangleDroite.getCoords(), new Point2d(translationDroiteX, 0.0)));
+
+        BaseShape H = new BaseShape();
+        H.add(rectangleGauche);
+        H.add(rectangleMilieu);
+        H.add(rectangleDroite);
+
+        return H; */
+        double rectWidth = 5.0;
+        double rectHeight = halfMaxHeight;
+        double rotationAngleMilieu = Math.toRadians(-90);
+        double rotationAngle = Math.toRadians(15);
+        double translationMilieuX = rectWidth*2;
+        double translationMilieuY = 10;
+        double translationDroiteX = rectWidth*4;
+
+        Rectangle rectangleGauche = new Rectangle(rectWidth, rectHeight);
+        Rectangle rectangleMilieu = new Rectangle(rectWidth, rectHeight/4);
+        Rectangle rectangleDroite = new Rectangle(rectWidth, rectHeight);
+
+        rectangleGauche.replaceAll(rectangleGauche.rotate(rectangleGauche.getCoords(), rotationAngle));
+        rectangleMilieu.replaceAll(rectangleMilieu.rotate(rectangleMilieu.getCoords(), rotationAngleMilieu));
+        rectangleMilieu.replaceAll(rectangleMilieu.translate(rectangleMilieu.getCoords(), new Point2d(translationMilieuX, translationMilieuY)));
+        rectangleDroite.replaceAll(rectangleDroite.rotate(rectangleDroite.getCoords(), -rotationAngle));
+        rectangleDroite.replaceAll(rectangleDroite.translate(rectangleDroite.getCoords(), new Point2d(translationDroiteX, 0.0)));
+
         BaseShape A = new BaseShape();
-        A.add(rectangle);
-        return rectangle;
+        A.add(rectangleGauche);
+        A.add(rectangleMilieu);
+        A.add(rectangleDroite);
+
+        return A;
     }
 
     /** TODO
@@ -58,11 +98,17 @@ public final class LetterFactory {
      * @return BaseShape containing the letter C
      */
     public static BaseShape create_C() {
-        Rectangle rectangle = new Rectangle(5.0, halfMaxHeight);
-        Circle circle = new Circle(5.0);
-        Circle circle2 = new Circle(5.0);
+        double translationX = halfMaxWidth-18;
+        double translationY = 0.0;
+
+        Ellipse ellipse = new Ellipse(halfMaxWidth,halfMaxHeight);
+        Rectangle rectangle = new Rectangle(5.0, halfMaxHeight-25);
+        rectangle.replaceAll(rectangle.translate(rectangle.getCoords(), new Point2d(translationX, translationY)));
+
         BaseShape C = new BaseShape();
-        C.add(rectangle);
+        C.add(ellipse);
+        C.remove(rectangle);
+
         return C;
     }
 
@@ -105,11 +151,24 @@ public final class LetterFactory {
      * @return BaseShape containing the letter H
      */
     public static BaseShape create_H() {
-        Rectangle rectangle = new Rectangle(5.0, 15.0);
-        Circle circle = new Circle(5.0);
-        Circle circle2 = new Circle(5.0);
+        double rectWidth = 5.0;
+        double rectHeight = halfMaxHeight;
+        double rotationAngle = Math.toRadians(-90);
+        double translationMilieuX = rectWidth*3.3;
+        double translationDroiteX = rectWidth*8;
+
+        Rectangle rectangleGauche = new Rectangle(rectWidth, rectHeight);
+        Rectangle rectangleMilieu = new Rectangle(rectWidth, rectHeight/2);
+        Rectangle rectangleDroite = new Rectangle(rectWidth, rectHeight);
+
+        rectangleMilieu.replaceAll(rectangleMilieu.rotate(rectangleMilieu.getCoords(), rotationAngle));
+        rectangleMilieu.replaceAll(rectangleMilieu.translate(rectangleMilieu.getCoords(), new Point2d(translationMilieuX, 0.0)));
+        rectangleDroite.replaceAll(rectangleDroite.translate(rectangleDroite.getCoords(), new Point2d(translationDroiteX, 0.0)));
+
         BaseShape H = new BaseShape();
-        H.add(rectangle);
+        H.add(rectangleGauche);
+        H.add(rectangleMilieu);
+        H.add(rectangleDroite);
 
         return H;
     }
