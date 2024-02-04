@@ -98,11 +98,13 @@ public final class LetterFactory {
      * @return BaseShape containing the letter C
      */
     public static BaseShape create_C() {
+        double rectWidth = 5.0;
+        double rectHeight = halfMaxHeight-25;
         double translationX = halfMaxWidth-18;
         double translationY = 0.0;
 
         Ellipse ellipse = new Ellipse(halfMaxWidth,halfMaxHeight);
-        Rectangle rectangle = new Rectangle(5.0, halfMaxHeight-25);
+        Rectangle rectangle = new Rectangle(rectWidth,rectHeight);
         rectangle.replaceAll(rectangle.translate(rectangle.getCoords(), new Point2d(translationX, translationY)));
 
         BaseShape C = new BaseShape();
