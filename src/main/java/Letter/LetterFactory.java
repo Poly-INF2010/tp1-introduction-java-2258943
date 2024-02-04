@@ -17,7 +17,10 @@ public final class LetterFactory {
      * @return BaseShape containing the letter A
      */
     public static BaseShape create_A()  {
-        return null;
+        Square square = new Square(5.0);
+        Rectangle rectangle = new Rectangle(5.0, 5.0);
+        rectangle.remove(square);
+        return rectangle;
     }
 
     /** TODO
@@ -25,7 +28,12 @@ public final class LetterFactory {
      * @return BaseShape containing the letter B
      */
     public static BaseShape create_B() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+        return B;
     }
 
     /** TODO
@@ -33,7 +41,12 @@ public final class LetterFactory {
      * @return BaseShape containing the letter C
      */
     public static BaseShape create_C() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+        return B;
     }
 
     /** TODO
@@ -41,7 +54,13 @@ public final class LetterFactory {
      * @return BaseShape containing the letter E
      */
     public static BaseShape create_E() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+
+        return B;
     }
 
     /** TODO
@@ -49,7 +68,13 @@ public final class LetterFactory {
      * @return BaseShape containing the letter H
      */
     public static BaseShape create_H() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+
+        return B;
     }
 
     /** TODO
@@ -57,7 +82,13 @@ public final class LetterFactory {
      * @return BaseShape containing the letter N
      */
     public static BaseShape create_N() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+
+        return B;
     }
 
     /** TODO
@@ -65,7 +96,13 @@ public final class LetterFactory {
      * @return BaseShape containing the letter O
      */
     public static BaseShape create_O() {
-        return null;
+        Rectangle rectangle = new Rectangle(5.0, 15.0);
+        Circle circle = new Circle(5.0);
+        Circle circle2 = new Circle(5.0);
+        BaseShape B = new BaseShape();
+        B.add(rectangle);
+
+        return B;
     }
 
 }
