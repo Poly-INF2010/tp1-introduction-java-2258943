@@ -12,7 +12,7 @@ public class Ellipse extends BaseShape {
      */
     public Ellipse(Double widthDiameter, Double heightDiameter) {
         super();
-        final Double DIVISEUR_INCREMENT =16.0;
+        final Double DIVISEUR_INCREMENT =100.0;
         Double space = Math.PI / DIVISEUR_INCREMENT;
 
         Double radiusX = widthDiameter / 2.0;
