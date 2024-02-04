@@ -71,9 +71,31 @@ public final class LetterFactory {
      * @return BaseShape containing the letter E
      */
     public static BaseShape create_E() {
-        Rectangle rectangle = new Rectangle(5.0, halfMaxHeight);
+        double rectWidth = 5.0;
+        double rectHeight = halfMaxHeight;
+        double rotationAngle = Math.toRadians(-90);
+        double translationX = rectWidth*3.3;
+        double translationYRect1 = -halfMaxHeight/2.1 ;
+        double translationYRect3 = halfMaxHeight/2.1 ;
+
+        Rectangle rectanglePrincipal = new Rectangle(rectWidth, rectHeight);
+        Rectangle rectangle1 = new Rectangle(rectWidth, rectHeight/2);
+        Rectangle rectangle2 = new Rectangle(rectWidth, rectHeight/2);
+        Rectangle rectangle3 = new Rectangle(rectWidth, rectHeight/2);
+
+        rectangle1.replaceAll(rectangle1.rotate(rectangle1.getCoords(), rotationAngle));
+        rectangle1.replaceAll(rectangle1.translate(rectangle1.getCoords(), new Point2d(translationX, translationYRect1)));
+        rectangle2.replaceAll(rectangle2.rotate(rectangle2.getCoords(), rotationAngle));
+        rectangle2.replaceAll(rectangle2.translate(rectangle2.getCoords(), new Point2d(translationX, 0.0)));
+        rectangle3.replaceAll(rectangle3.rotate(rectangle3.getCoords(), rotationAngle));
+        rectangle3.replaceAll(rectangle3.translate(rectangle3.getCoords(), new Point2d(translationX, translationYRect3)));
+
+
         BaseShape E = new BaseShape();
-        E.add(rectangle);
+        E.add(rectanglePrincipal);
+        E.add(rectangle1);
+        E.add(rectangle2);
+        E.add(rectangle3);
 
         return E;
     }
