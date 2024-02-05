@@ -135,71 +135,42 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Maximum X coordinate of the shape
      */
     public Double getMaxX() {
-        if(!this.coords.isEmpty()){
-            return this.coords.stream().max(Comparator.comparingDouble(Point2d::X)).get().X();
-        } else
-        {
-            return -Double.MAX_VALUE;
-        }
+        return !this.coords.isEmpty() ? this.coords.stream().max(Comparator.comparingDouble(Point2d::X)).get().X() : -Double.MAX_VALUE;
     }
 
     /** TODO
      * @return Maximum Y coordinate of the shape
      */
     public Double getMaxY() {
-        if(!this.coords.isEmpty()){
-            return this.coords.stream().max(Comparator.comparingDouble(Point2d::Y)).get().Y();
-        } else
-        {
-            return -Double.MAX_VALUE;
-        }
+        return !this.coords.isEmpty() ? this.coords.stream().max(Comparator.comparingDouble(Point2d::Y)).get().Y() : -Double.MAX_VALUE;
     }
 
     /** TODO
      * @return 2D Point containing the maximum X and Y coordinates of the shape
      */
     public Point2d getMaxCoord() {
-        if(!this.coords.isEmpty()){
-            return new Point2d(this.getMaxX(),this.getMaxY());
-        } else
-        {
-            return new Point2d(-Double.MAX_VALUE,-Double.MAX_VALUE);
-        }
+        return !this.coords.isEmpty() ? new Point2d(this.getMaxX(),this.getMaxY()) : new Point2d(-Double.MAX_VALUE,-Double.MAX_VALUE);
     }
 
     /** TODO
      * @return Minimum X coordinate of the shape
      */
     public Double getMinX() {
-        if(!this.coords.isEmpty()){
-            return this.coords.stream().min(Comparator.comparingDouble(Point2d::X)).get().X();
-        } else {
-            return Double.MAX_VALUE;
-        }
+        return !this.coords.isEmpty() ? this.coords.stream().min(Comparator.comparingDouble(Point2d::X)).get().X() : Double.MAX_VALUE;
     }
 
     /** TODO
      * @return Minimum Y coordinate of the shape
      */
     public Double getMinY() {
-        if(!this.coords.isEmpty()){
-            return this.coords.stream().min(Comparator.comparingDouble(Point2d::Y)).get().Y();
-        } else
-        {
-            return Double.MAX_VALUE;
-        }
+        return !this.coords.isEmpty() ? this.coords.stream().min(Comparator.comparingDouble(Point2d::Y)).get().Y() : Double.MAX_VALUE;
     }
 
     /** TODO
      * @return 2D point containing the minimum X and Y coordinate of the shape
      */
     public Point2d getMinCoord() {
-        if(!this.coords.isEmpty()){
-            return new Point2d(this.getMinX(),this.getMinY());
-        } else
-        {
-            return new Point2d(Double.MAX_VALUE,Double.MAX_VALUE);
-        }
+        return !this.coords.isEmpty() ? new Point2d(this.getMinX(),this.getMinY()) : new Point2d(Double.MAX_VALUE,Double.MAX_VALUE);
     }
 
     /** TODO
