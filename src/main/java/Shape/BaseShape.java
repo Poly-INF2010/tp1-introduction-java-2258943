@@ -136,13 +136,11 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public Double getMaxX() {
         if(!this.coords.isEmpty()){
-            Double value = this.coords.stream().max(Comparator.comparingDouble(Point2d::X)).get().X();
-            return value;
+            return this.coords.stream().max(Comparator.comparingDouble(Point2d::X)).get().X();
         } else
         {
             return -Double.MAX_VALUE;
         }
-
     }
 
     /** TODO
@@ -150,8 +148,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public Double getMaxY() {
         if(!this.coords.isEmpty()){
-            Double value = this.coords.stream().max(Comparator.comparingDouble(Point2d::Y)).get().Y();
-            return value;
+            return this.coords.stream().max(Comparator.comparingDouble(Point2d::Y)).get().Y();
         } else
         {
             return -Double.MAX_VALUE;
@@ -175,8 +172,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public Double getMinX() {
         if(!this.coords.isEmpty()){
-            Double value = this.coords.stream().min(Comparator.comparingDouble(Point2d::X)).get().X();
-            return value;
+            return this.coords.stream().min(Comparator.comparingDouble(Point2d::X)).get().X();
         } else {
             return Double.MAX_VALUE;
         }
@@ -187,8 +183,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public Double getMinY() {
         if(!this.coords.isEmpty()){
-            Double value = this.coords.stream().min(Comparator.comparingDouble(Point2d::Y)).get().Y();
-            return value;
+            return this.coords.stream().min(Comparator.comparingDouble(Point2d::Y)).get().Y();
         } else
         {
             return Double.MAX_VALUE;
